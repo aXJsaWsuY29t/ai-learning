@@ -15,5 +15,6 @@ pip install -r requirements.txt
 
 ## Run tutorials
 ```bash
-python .\01-linear-algebra-softmax\matmul.py
+cd .\01-linear-algebra-softmax
+pytest test/
 ```

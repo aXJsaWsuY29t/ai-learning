@@ -15,15 +15,3 @@ def matmul(A, B):
                 C[i, j] += A[i, k] * B[k, j]
 
     return C
-
-# test
-A = np.random.randn(3, 4)
-B = np.random.randn(4, 2)
-
-result = matmul(A, B)
-expected = np.dot(A, B)
-allclose = np.allclose(result, expected)
-
-print(f"result = {result}")
-print(f"expected = {expected}")
-print(f"allclose = {allclose}")
