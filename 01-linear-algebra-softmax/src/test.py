@@ -1,6 +1,7 @@
 import numpy as np
 from matmul import matmul
 from dot_product import dot_product
+from cosine_similarity import cosine_similarity
 
 
 def test_matmul():
@@ -32,5 +33,22 @@ def test_dot_product():
     print(f"expected = {expected}")
 
 
+def test_cosine_similarity():
+    print("\n=== cosine_similarity ===")
+    A = np.array([2, 3, 4, 5])
+    B = np.array([3, 4, 5, 6])
+    print(f"A = {A}")
+    print(f"B = {B}")
+
+    result = cosine_similarity(A, B)
+    expected = np.dot(A, B) / (np.linalg.norm(A) * np.linalg.norm(B))
+
+    print(f"result = {result}")
+    print(f"expected = {expected}")
+
+
+
 test_matmul()
 test_dot_product()
+test_cosine_similarity()
+
