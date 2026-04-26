@@ -2,6 +2,7 @@ import numpy as np
 from matmul import matmul
 from dot_product import dot_product
 from cosine_similarity import cosine_similarity
+from softmax import softmax
 
 
 def test_matmul():
@@ -47,8 +48,24 @@ def test_cosine_similarity():
     print(f"expected = {expected}")
 
 
+def test_softmax():
+    print("\n=== softmax ===")
+    A = np.array([2.0, 1.0, 0.5])
+    result = softmax(A)
+    expected = np.exp(A) / np.sum(np.exp(A))
+    allclose = np.allclose(result, expected)
+
+    print(f"sum = {sum(result)}, must be 1.0")
+    print(f"result = {result}")
+    print(f"expected = {expected}")
+    print(f"allclose = {allclose}")
+
+    index_max_a = np.argmax(A)
+    index_max_result = result.index(max(result))
+    print(f"max() index in A = {index_max_a}, in result = {index_max_result}")
 
 test_matmul()
 test_dot_product()
 test_cosine_similarity()
+test_softmax()
 
