@@ -22,5 +22,5 @@ pytest test/
 
 ## Open notebook for notes
 ```bash
-jupyter notebook
+jupyter notebook notes.ipynb
 ```
